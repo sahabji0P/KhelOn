@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "745529797804",
+    "project_id": "khelon-b75d4",
+    "storage_bucket": "khelon-b75d4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:745529797804:android:083ed30052363064e38309",
+        "android_client_info": {
+          "package_name": "com.example.khelon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "745529797804-k4iusvf4lv5jgmarmblgu80sm0tee90b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqQ5bAezqHF5tiFjfnAIIJmXo0VxbR5Xo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "745529797804-k4iusvf4lv5jgmarmblgu80sm0tee90b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
