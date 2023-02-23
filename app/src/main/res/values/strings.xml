@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">KHELON</string>
+    <string name="welcome_to_your_application">Welcome to Your Application!</string>
+    <string name="sign_up"><u>Sign Up!</u></string>
+    <string name="login"><u>Login!</u></string>
+
+    <string name="name">Name</string>
+</resources>
