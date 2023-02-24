@@ -50,6 +50,8 @@
                 android:drawablePadding="8dp"
                 android:hint="@string/name"
                 android:padding="10dp"
+                android:maxLines="1"
+                android:inputType="textPersonName"
                 android:textColorHint="@color/white"
                 android:textColor="@color/white" />
 
@@ -64,6 +66,7 @@
                 android:drawablePadding="8dp"
                 android:hint="Email"
                 android:padding="10dp"
+                android:maxLines="1"
                 android:inputType="textEmailAddress"
                 android:textColor="@color/white" />
 
@@ -78,6 +81,7 @@
                 android:drawablePadding="8dp"
                 android:hint="Password"
                 android:padding="10dp"
+                android:maxLines="1"
                 android:inputType="textPassword"
                 android:textColor="@color/white" />
 
@@ -90,10 +94,11 @@
                 android:background="@drawable/custom_edittext"
                 android:drawableLeft="@drawable/baseline_phone_24"
                 android:drawablePadding="8dp"
-                android:ems="10"
                 android:hint="Phone Number"
                 android:padding="10dp"
                 android:textColor="@color/white"
+                android:maxLines="1"
+                android:maxLength="10"
                 android:inputType="number" />
 
             <Button
