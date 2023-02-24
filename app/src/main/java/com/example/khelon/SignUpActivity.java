@@ -72,25 +72,26 @@ public class SignUpActivity extends AppCompatActivity {
                     signupName.requestFocus();
 
                 }
-                if (signupEmailTxt.isEmpty()) {
+                else if (signupEmailTxt.isEmpty()) {
                     Toast.makeText(SignUpActivity.this, "Email cannot be Empty!", Toast.LENGTH_SHORT).show();
                     signupEmail.setError("Email cannot be Empty");
                     signupEmail.requestFocus();
 
+
                 }
-                if (!signupEmailTxt.matches(emailPattern)) {
+                else if (!signupEmailTxt.matches(emailPattern)) {
                     Toast.makeText(SignUpActivity.this, "Invalid Email Format!", Toast.LENGTH_SHORT).show();
                     signupEmail.setError("Invalid Email Format");
                     signupEmail.requestFocus();
 
                 }
-                if (signupPasswordTxt.isEmpty() || signupPasswordTxt.length() < 8) {
+                else if (signupPasswordTxt.isEmpty() || signupPasswordTxt.length() < 8) {
                     Toast.makeText(SignUpActivity.this, "Please enter at least 8 Characters of Password!", Toast.LENGTH_SHORT).show();
                     signupPassword.setError("Enter a valid password!");
                     signupPassword.requestFocus();
 
                 }
-                if (signupPhoneNo.isEmpty() || signupPhoneNo.length() < 10) {
+                else if (signupPhoneNo.isEmpty() || signupPhoneNo.length() < 10) {
                     Toast.makeText(SignUpActivity.this, "Please enter a valid Contact No!", Toast.LENGTH_SHORT).show();
                     signupPhone.setError("Enter a valid Contact Number");
                     signupPhone.requestFocus();
@@ -104,7 +105,7 @@ public class SignUpActivity extends AppCompatActivity {
                                 Toast.makeText(SignUpActivity.this, "Sign Up! Successful, Kindly login", Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
                             } else {
-                                Toast.makeText(SignUpActivity.this, "Sign Up Failed!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(SignUpActivity.this, "Sign Up Failed! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
