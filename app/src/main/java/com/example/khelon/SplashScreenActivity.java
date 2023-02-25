@@ -26,7 +26,7 @@ public class SplashScreenActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        },3000);
+        },2000);
     }
 // Disables the back button on the Splash screen.
     @Override

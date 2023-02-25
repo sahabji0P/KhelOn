@@ -1,9 +1,7 @@
 package com.example.khelon;
 
 import static android.view.animation.ScaleAnimation.*;
-import static com.example.khelon.R.drawable.round_back_event;
-import static com.example.khelon.R.drawable.round_back_live;
-import static com.example.khelon.R.drawable.round_back_update;
+import static com.example.khelon.R.drawable.round_back_navoptions;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -56,17 +54,17 @@ public class MainActivity extends AppCompatActivity {
                     eventsTxt.setVisibility(View.GONE);
                     liveTxt.setVisibility(View.GONE);
 
-                    eventsImage.setImageResource(R.drawable.event_icon);
+                    eventsImage.setImageResource(R.drawable.team_icon);
                     liveImage.setImageResource(R.drawable.live_icon);
 
                     events.setBackgroundColor(getResources().getColor(android.R.color.transparent));
                     live.setBackgroundColor(getResources().getColor(android.R.color.transparent));
 
-                    update.setBackgroundResource(round_back_update);
+                    update.setBackgroundResource(round_back_navoptions);
                     updateText.setVisibility(View.VISIBLE);
-                    updateImage.setImageResource(R.drawable.update_selected_icon);
+                    updateImage.setImageResource(R.drawable.dashboard_selected_icon);
 
-                    mainlayout.setBackgroundColor(getResources().getColor(R.color.updates));
+                    mainlayout.setBackgroundColor(getResources().getColor(R.color.black));
 
                     ScaleAnimation scaleAnimation = new ScaleAnimation(0.8f,1.0f,1f,1f, RELATIVE_TO_SELF,0.0f);
                     scaleAnimation.setDuration(200);
@@ -91,17 +89,17 @@ public class MainActivity extends AppCompatActivity {
                     updateText.setVisibility(View.GONE);
                     liveTxt.setVisibility(View.GONE);
 
-                    updateImage.setImageResource(R.drawable.update_icon);
+                    updateImage.setImageResource(R.drawable.dashboard_icon);
                     liveImage.setImageResource(R.drawable.live_icon);
 
                     update.setBackgroundColor(getResources().getColor(android.R.color.transparent));
                     live.setBackgroundColor(getResources().getColor(android.R.color.transparent));
 
-                    events.setBackgroundResource(round_back_event);
+                    events.setBackgroundResource(round_back_navoptions);
                     eventsTxt.setVisibility(View.VISIBLE);
-                    eventsImage.setImageResource(R.drawable.event_selected_icon);
+                    eventsImage.setImageResource(R.drawable.team_selected_icon);
 
-                    mainlayout.setBackgroundColor(getResources().getColor(R.color.events));
+                    mainlayout.setBackgroundColor(getResources().getColor(R.color.black));
 
                     ScaleAnimation scaleAnimation = new ScaleAnimation(0.8f,1.0f,1f,1f, RELATIVE_TO_SELF,0.0f);
                     scaleAnimation.setDuration(200);
@@ -127,17 +125,17 @@ public class MainActivity extends AppCompatActivity {
                     eventsTxt.setVisibility(View.GONE);
                     updateText.setVisibility(View.GONE);
 
-                    eventsImage.setImageResource(R.drawable.event_icon);
-                    updateImage.setImageResource(R.drawable.update_icon);
+                    eventsImage.setImageResource(R.drawable.team_icon);
+                    updateImage.setImageResource(R.drawable.dashboard_icon);
 
                     events.setBackgroundColor(getResources().getColor(android.R.color.transparent));
                     update.setBackgroundColor(getResources().getColor(android.R.color.transparent));
 
-                    live.setBackgroundResource(round_back_live);
+                    live.setBackgroundResource(round_back_navoptions);
                     liveTxt.setVisibility(View.VISIBLE);
                     liveImage.setImageResource(R.drawable.live_selected_icon);
 
-                    mainlayout.setBackgroundColor(getResources().getColor(R.color.live));
+                    mainlayout.setBackgroundColor(getResources().getColor(R.color.black));
 
                     ScaleAnimation scaleAnimation = new ScaleAnimation(0.8f,1.0f,1f,1f, RELATIVE_TO_SELF,0.0f);
                     scaleAnimation.setDuration(200);
