@@ -12,4 +12,17 @@
     <color name="txtcolor">#07E300</color>
     <color name="red">#FF0000</color>
     <color name="transparent">#0CEDEDED</color>
+
+    <color name="live">#1194A4</color>
+    <color name="events">#C9379D</color>
+    <color name="updates">#5B37B7</color>
+
+    <color name="team">#1194A4</color>
+    <color name="equipments">#C9379D</color>
+    <color name="dashboard">#5B37B7</color>
+
+    <color name="live_20">#331194A4</color>
+    <color name="events_20">#33C9379D</color>
+    <color name="updates_20">#335B37B7</color>
+
 </resources>
