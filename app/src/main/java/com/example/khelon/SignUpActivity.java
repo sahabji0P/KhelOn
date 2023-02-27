@@ -97,7 +97,8 @@ public class SignUpActivity extends AppCompatActivity {
                     signupPhone.requestFocus();
                 } else {
 
-                    mAuth.createUserWithEmailAndPassword(signupEmailTxt, signupPasswordTxt).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    mAuth.createUserWithEmailAndPassword(signupEmailTxt, signupPasswordTxt)
+                            .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
 

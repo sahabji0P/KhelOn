@@ -50,6 +50,7 @@
                 android:hint="Email"
                 android:inputType="textEmailAddress"
                 android:padding="10dp"
+
                 android:textColor="@color/white"/>
 
             <EditText

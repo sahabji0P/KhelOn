@@ -7,11 +7,13 @@
     android:background="@color/black"
     tools:context=".MainActivity">
 
+
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/bottomNav" />
+        android:layout_above="@+id/bottomNav"
+        />
 
 
     <LinearLayout
@@ -22,13 +24,14 @@
         android:elevation="10dp"
         android:gravity="center"
         android:orientation="horizontal"
-        android:paddingStart="0dp"
+        android:paddingStart="15dp"
         android:paddingTop="12dp"
-        android:paddingEnd="0dp"
+        android:paddingEnd="15dp"
         android:paddingBottom="12dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="25dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+
         android:background="@drawable/round_nav_layout"
         android:weightSum="4">
 
@@ -125,10 +128,39 @@
                 android:textStyle="bold" />
 
 
+
         </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/settingLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_weight="1"
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp">
 
+        <ImageView
+            android:id="@+id/settingIcon"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/baseline_settings_24" />
 
+        <TextView
+            android:id="@+id/settingTxt"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Settings"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
 
 
     </LinearLayout>

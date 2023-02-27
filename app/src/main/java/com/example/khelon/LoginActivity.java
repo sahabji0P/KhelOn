@@ -55,15 +55,6 @@ public class LoginActivity extends AppCompatActivity {
                 String loginEmailTxt = loginEmail.getText().toString();
                 String loginPasswordTxt = loginPassword.getText().toString();
 
-//                if (loginEmailTxt.isEmpty()) {
-//                    Toast.makeText(LoginActivity.this, "Invalid Email!", Toast.LENGTH_SHORT).show();
-//                    loginEmail.setError("Enter the correct Email!");
-//                } if (loginPasswordTxt.isEmpty() || loginPasswordTxt.length() < 8) {
-//                    Toast.makeText(LoginActivity.this, "Please enter at least 8 Characters of Password!", Toast.LENGTH_SHORT).show();
-//                    loginPassword.setError("Enter a valid password!");
-//                }else {
-//
-//                }
                 if (!loginEmailTxt.isEmpty() && loginEmailTxt.matches(emailPattern)){
                     if (!loginPasswordTxt.isEmpty()){
                         mAuth.signInWithEmailAndPassword(loginEmailTxt,loginPasswordTxt)
