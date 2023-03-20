@@ -3,6 +3,7 @@ package com.example.khelon;
 import static android.view.animation.ScaleAnimation.*;
 import static com.example.khelon.R.drawable.round_back_navoptions;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
@@ -25,6 +26,11 @@ import android.widget.Toast;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import org.w3c.dom.Text;
 
@@ -171,15 +177,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         firebaseAuth = FirebaseAuth.getInstance();
+        
         checkUser();
-
-//        logoutIm.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                firebaseAuth.signOut();
-//                checkUser();
-//            }
-//        });
 
         setting.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -192,11 +191,19 @@ public class MainActivity extends AppCompatActivity {
                 bottomSheetView.findViewById(R.id.logoutLayout).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(MainActivity.this, "Logout Success!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "Logout Successfull!", Toast.LENGTH_SHORT).show();
                         bottomSheetDialog.dismiss();
                         firebaseAuth.signOut();
                         checkUser();
 
+                    }
+                });
+
+                bottomSheetView.findViewById(R.id.aboutUsLayout).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(MainActivity.this, "About Us!", Toast.LENGTH_SHORT).show();
+                        bottomSheetDialog.dismiss();
                     }
                 });
                 bottomSheetDialog.setContentView(bottomSheetView);
@@ -207,6 +214,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+
 
     private void checkUser() {
         FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();

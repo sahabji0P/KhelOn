@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/dialog_bkg"
+    android:background="@color/black"
     android:id="@+id/bottomsheetLayout"
     android:orientation="vertical">
 
@@ -13,24 +13,6 @@
         android:layout_gravity="center"
         android:scaleType="centerCrop"
         android:src="@drawable/round_remove" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="5dp"
-            android:padding="10dp"
-            android:text="Settings"
-            android:textSize="30dp"
-            android:textStyle="bold" />
-
-    </LinearLayout>
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -53,6 +35,7 @@
             android:textSize="30dp"
             android:layout_gravity="center"
             android:layout_marginStart="10dp"
+            android:textColor="@color/white"
             android:textStyle="bold"
             android:id="@+id/username"/>
 
@@ -63,15 +46,47 @@
         android:layout_height="3dp"
         android:layout_marginTop="7dp"
         android:layout_marginBottom="7dp"
-        android:background="@color/black"/>
+        android:background="#22FFFFFF"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/aboutUsLayout"
+        android:padding="10dp"
+        android:background="@drawable/round_back_navoptions"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="15dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/info_icon"
+            android:id="@+id/aboutIcon"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="About Us "
+            android:textSize="20dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="5dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:id="@+id/aboutTxt"/>
+    </LinearLayout>
 
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/logoutLayout"
         android:padding="10dp"
         android:layout_marginTop="10dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/round_back_navoptions"
         android:orientation="horizontal">
 
         <ImageView
@@ -79,18 +94,20 @@
             android:layout_height="30dp"
             android:src="@drawable/baseline_logout_24"
             android:id="@+id/logoutIcon"
-            android:layout_marginStart="15dp"/>
+            />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Logout"
+            android:text="Logout "
             android:textSize="20dp"
             android:layout_gravity="center"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="5dp"
+            android:textColor="@color/white"
             android:textStyle="bold"
             android:id="@+id/logout"/>
     </LinearLayout>
+
 
 
 </LinearLayout>
