@@ -22,6 +22,8 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Objects;
+
 public class SignUpActivity extends AppCompatActivity {
     EditText signupName;
     EditText signupEmail;
@@ -51,6 +53,7 @@ public class SignUpActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
+        mUser =FirebaseAuth.getInstance().getCurrentUser();
 
         switchToLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,9 +108,25 @@ public class SignUpActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
 
                             if (task.isSuccessful()) {
-                                Toast.makeText(SignUpActivity.this, "Sign Up! Successful, Kindly login", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
-                            } else {
+                                mUser = mAuth.getCurrentUser();
+                                UserProfileChangeRequest userProfileChangeRequest = new UserProfileChangeRequest.Builder()
+                                        .setDisplayName(String.valueOf(signupName))
+                                        .build();
+                                mUser.updateProfile(userProfileChangeRequest).addOnCompleteListener(
+                                        task1 -> {
+                                            if (task1.isSuccessful()){
+                                                startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
+                                                Toast.makeText(SignUpActivity.this, "Sign Up! Successful, Kindly login", Toast.LENGTH_SHORT).show();
+                                            }else {
+                                                Toast.makeText(SignUpActivity.this, "Error"+Objects.requireNonNull(task1.getException()).getMessage(), Toast.LENGTH_LONG).show();
+
+                                            }
+                                        }
+                                );
+//                                Toast.makeText(SignUpActivity.this, "Sign Up! Successful, Kindly login", Toast.LENGTH_SHORT).show();
+//                                startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
+                            }
+                            else {
                                 Toast.makeText(SignUpActivity.this, "Sign Up Failed! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         }

@@ -40,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private int selectedTab = 1;
 
+    public long pressedTime;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -66,6 +68,10 @@ public class MainActivity extends AppCompatActivity {
         final TextView settingTxt = findViewById(R.id.settingTxt);
 
         final RelativeLayout mainlayout = findViewById(R.id.mainLayout);
+
+
+
+
 
 
         getSupportFragmentManager().beginTransaction().setReorderingAllowed(true)
@@ -176,8 +182,15 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
+
         firebaseAuth = FirebaseAuth.getInstance();
-        
+        FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+
+
+
+//        final String userDisplayName = firebaseUser.getDisplayName();
+
+
         checkUser();
 
         setting.setOnClickListener(new View.OnClickListener() {
@@ -191,7 +204,7 @@ public class MainActivity extends AppCompatActivity {
                 bottomSheetView.findViewById(R.id.logoutLayout).setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(MainActivity.this, "Logout Successfull!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "Logout Successful!", Toast.LENGTH_SHORT).show();
                         bottomSheetDialog.dismiss();
                         firebaseAuth.signOut();
                         checkUser();
@@ -206,6 +219,10 @@ public class MainActivity extends AppCompatActivity {
                         bottomSheetDialog.dismiss();
                     }
                 });
+
+
+
+
                 bottomSheetDialog.setContentView(bottomSheetView);
                 bottomSheetDialog.show();
 
@@ -215,7 +232,19 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void onBackPressed(){
+        if (pressedTime + 2000 > System.currentTimeMillis()){
+            super.onBackPressed();
+            finish();
+        }else {
+            Toast.makeText(this, "Please click the back button twice to exit!", Toast.LENGTH_SHORT).show();
+        }
+        pressedTime = System.currentTimeMillis();
 
+    }
+
+//    TextView displayName = findViewById(R.id.username);
+//                        displayName.setText(userDisplayName);
 
     private void checkUser() {
         FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();

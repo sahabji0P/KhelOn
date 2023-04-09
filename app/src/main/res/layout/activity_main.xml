@@ -13,7 +13,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/bottomNav"
-        android:name="com.example.khelon.DashboardFragment" />
+        android:name="com.example.khelon.DashboardFragment"
+        tools:layout="@layout/fragment_dashboard" >
+
+
+    </androidx.fragment.app.FragmentContainerView>
 
 
     <LinearLayout
@@ -87,7 +91,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textSize="15sp"
-                android:text="Equipments"
+                android:text="Registration"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
 
@@ -117,7 +121,7 @@
                 android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Teams"
+                android:text="News"
                 android:textColor="@color/white"
                 android:gravity="center"
                 android:textSize="15sp"
@@ -143,14 +147,14 @@
             android:layout_width="20dp"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
-            android:src="@drawable/baseline_settings_24" />
+            android:src="@drawable/baseline_account_box" />
 
         <TextView
             android:id="@+id/settingTxt"
             android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Settings"
+            android:text="Profile"
             android:textColor="@color/white"
             android:gravity="center"
             android:textSize="15sp"

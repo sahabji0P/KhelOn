@@ -8,6 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import org.w3c.dom.Text;
 
 /**
@@ -74,10 +77,19 @@ public class DashboardFragment extends Fragment {
         TextView basketBtn = v.findViewById(R.id.basketballGame);
         TextView tableBtn = v.findViewById(R.id.tabletennisGame);
 
+        TextView userName = v.findViewById(R.id.uname);
+        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+        FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+
+        final String userDisplayName = firebaseUser.getEmail();
+        
+        userName.setText(userDisplayName);
+
         cricketBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(),CricketActivity.class));
+
             }
         });
 
@@ -85,6 +97,7 @@ public class DashboardFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(),FootballAvtivity.class));
+
             }
         });
 
@@ -92,6 +105,7 @@ public class DashboardFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(),BadmintonActivity.class));
+
             }
         });
 
@@ -99,6 +113,7 @@ public class DashboardFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(),BasketballActivity.class));
+
             }
         });
 
@@ -106,6 +121,7 @@ public class DashboardFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(),TableTennisActivity.class));
+
             }
         });
 
@@ -113,8 +129,11 @@ public class DashboardFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getActivity(),VolleyBallActivity.class));
+
             }
         });
+
+
 
         return v;
     }
