@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    android:background="@color/black"
+    android:background="@drawable/khelon_background_image"
     tools:context=".DashboardFragment"    >
 
 
@@ -13,37 +13,36 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:id="@+id/dashboardHeader"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="center">
-
+            android:background="@drawable/application_header_bg"
+            android:layout_marginBottom="20dp"
+            android:paddingBottom="10dp"
+            android:elevation="100dp"
+            >
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Good Morning"
-                android:textSize="30dp"
-                android:layout_marginTop="30dp"
-                android:layout_gravity="center"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:id="@+id/greeting"/>
-
-            <TextView
-                android:id="@+id/uname"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="User Name"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="20dp"
+                android:text="Dashboard"
                 android:textSize="25dp"
-                android:layout_margin="15dp"
-
-                android:layout_gravity="center"
-                android:textColor="@color/white"
                 android:textStyle="bold"
-                />
+                android:textColor="@color/white"/>
 
-        </LinearLayout>
+            <ImageButton
+                android:id="@+id/optionsDashboard"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@color/transparent"
+                android:src="@drawable/setting_icon"
+                android:layout_marginEnd="20dp"
+                android:layout_centerVertical="true"
+                android:contentDescription="Setting button"
+                android:layout_alignParentRight="true"/>
+        </RelativeLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -51,9 +50,8 @@
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginTop="20dp"
+            android:elevation="100dp"
             android:background="@drawable/cricketlogo">
-
-
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -107,6 +105,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginTop="20dp"
+            android:elevation="100dp"
             android:background="@drawable/footballlogo">
 
 
@@ -161,6 +160,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginTop="20dp"
+            android:elevation="100dp"
             android:background="@drawable/basketlogo">
 
 
@@ -215,6 +215,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginTop="20dp"
+            android:elevation="100dp"
             android:background="@drawable/badmintonlogo">
 
 
@@ -268,6 +269,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginTop="20dp"
+            android:elevation="100dp"
             android:background="@drawable/volleylogo">
 
 
@@ -322,6 +324,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginTop="20dp"
+            android:elevation="100dp"
             android:background="@drawable/tabletennislogo">
 
 

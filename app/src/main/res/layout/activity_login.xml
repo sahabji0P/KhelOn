@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bgclr"
+    android:background="@drawable/khelon_background_image"
     tools:context=".LoginActivity">
 
     <LinearLayout
@@ -17,6 +17,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="135dp"
+            android:elevation="30dp"
             android:src="@drawable/logo" />
 
         <androidx.cardview.widget.CardView
@@ -106,7 +107,7 @@
                         android:layout_marginTop="10dp"
                         android:text="@string/sign_up"
                         android:textAlignment="center"
-                        android:textColor="@color/white"
+                        android:textColor="@color/khelcolor"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 

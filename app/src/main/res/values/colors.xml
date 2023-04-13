@@ -3,15 +3,15 @@
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_200">#05AA9A</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="khelcolor">#FFFFC516</color>
-    <color name="lavander">#E6EFB7FF</color>
-    <color name="txtcolor">#07E300</color>
+    <color name="grey">#F7555555</color>
+    <color name="green">#07E300</color>
     <color name="red">#FF0000</color>
-    <color name="transparent">#0CEDEDED</color>
+    <color name="transparent">#0FEDEDED</color>
 
     <color name="live">#1194A4</color>
     <color name="events">#C9379D</color>
@@ -25,4 +25,8 @@
     <color name="events_20">#33C9379D</color>
     <color name="updates_20">#335B37B7</color>
 
+    <color name="app_header">#B80404</color>
+
 </resources>
+
+<!--FFFFC516-->

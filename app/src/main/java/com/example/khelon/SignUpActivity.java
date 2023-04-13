@@ -9,18 +9,18 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
+
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
+
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
-import com.google.firebase.database.FirebaseDatabase;
+
 
 import java.util.Objects;
 
@@ -31,8 +31,6 @@ public class SignUpActivity extends AppCompatActivity {
     EditText signupPhone;
     Button signupButton;
     final String emailPattern = "^e[1-2][1-9]cseu\\d\\d\\d\\d@bennett.edu.in";
-    ProgressBar progressBar;
-
     FirebaseAuth mAuth;
     FirebaseUser mUser;
 
@@ -110,7 +108,7 @@ public class SignUpActivity extends AppCompatActivity {
                             if (task.isSuccessful()) {
                                 mUser = mAuth.getCurrentUser();
                                 UserProfileChangeRequest userProfileChangeRequest = new UserProfileChangeRequest.Builder()
-                                        .setDisplayName(String.valueOf(signupName))
+                                        .setDisplayName(String.valueOf(signupName.getText()))
                                         .build();
                                 mUser.updateProfile(userProfileChangeRequest).addOnCompleteListener(
                                         task1 -> {

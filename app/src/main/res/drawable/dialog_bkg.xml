@@ -13,8 +13,7 @@
         android:right="10dp"
         android:left="10dp"/>
 
-    <stroke
-        android:width="3dp"
-        android:color="@color/khelcolor"/>
+    <solid
+        android:color="@color/app_header"/>
 </shape>
 

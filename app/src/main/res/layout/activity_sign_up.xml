@@ -11,11 +11,12 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center"
-        android:background="@drawable/bgclr">
+        android:background="@drawable/khelon_background_image">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="135dp"
+            android:elevation="30dp"
             android:src="@drawable/logo" />
 
 
@@ -25,7 +26,7 @@
             android:layout_margin="30dp"
             app:cardCornerRadius="50dp"
             app:cardBackgroundColor="@color/transparent"
-            app:cardElevation="30dp">
+            app:cardElevation="50dp">
 
 
             <LinearLayout
@@ -139,7 +140,7 @@
                         android:layout_marginTop="10dp"
                         android:text="@string/login"
                         android:textAlignment="center"
-                        android:textColor="@color/white"
+                        android:textColor="@color/khelcolor"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 

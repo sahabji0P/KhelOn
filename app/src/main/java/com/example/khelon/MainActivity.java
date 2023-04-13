@@ -3,19 +3,16 @@ package com.example.khelon;
 import static android.view.animation.ScaleAnimation.*;
 import static com.example.khelon.R.drawable.round_back_navoptions;
 
-import androidx.annotation.NonNull;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Dialog;
+
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
+
 import android.os.Bundle;
-import android.view.Gravity;
-import android.view.LayoutInflater;
+
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
+
 import android.view.animation.ScaleAnimation;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -23,22 +20,15 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.material.bottomsheet.BottomSheetDialog;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import org.w3c.dom.Text;
 
 
 public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
-    private int selectedTab = 1;
+    private int selectedTab = 4;
 
     public long pressedTime;
 
@@ -71,11 +61,12 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+        firebaseAuth = FirebaseAuth.getInstance();
 
 
 
         getSupportFragmentManager().beginTransaction().setReorderingAllowed(true)
-                .replace(R.id.fragmentContainer, DashboardFragment.class,null).commit();
+                .replace(R.id.fragmentContainer, ProfileFragment.class,null).commit();
 
 
         update.setOnClickListener(v -> {
@@ -91,8 +82,9 @@ public class MainActivity extends AppCompatActivity {
 
                 eventsImage.setImageResource(R.drawable.team_icon);
                 liveImage.setImageResource(R.drawable.live_icon);
-                settingImage.setImageResource(R.drawable.baseline_settings_24);
+                settingImage.setImageResource(R.drawable.baseline_account_box);
 
+                setting.setBackgroundColor(getResources().getColor(android.R.color.transparent));
                 events.setBackgroundColor(getResources().getColor(android.R.color.transparent));
                 live.setBackgroundColor(getResources().getColor(android.R.color.transparent));
 
@@ -118,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
 
             if(selectedTab != 2){
                 getSupportFragmentManager().beginTransaction().setReorderingAllowed(true)
-                        .replace(R.id.fragmentContainer, EquipmentFragment.class,null).commit();
+                        .replace(R.id.fragmentContainer, RegistrationFragment.class,null).commit();
 
                 updateText.setVisibility(View.GONE);
                 liveTxt.setVisibility(View.GONE);
@@ -126,8 +118,9 @@ public class MainActivity extends AppCompatActivity {
 
                 updateImage.setImageResource(R.drawable.dashboard_icon);
                 liveImage.setImageResource(R.drawable.live_icon);
-                settingImage.setImageResource(R.drawable.baseline_settings_24);
+                settingImage.setImageResource(R.drawable.baseline_account_box);
 
+                setting.setBackgroundColor(getResources().getColor(android.R.color.transparent));
                 update.setBackgroundColor(getResources().getColor(android.R.color.transparent));
                 live.setBackgroundColor(getResources().getColor(android.R.color.transparent));
 
@@ -153,7 +146,7 @@ public class MainActivity extends AppCompatActivity {
             if(selectedTab != 3){
 
                 getSupportFragmentManager().beginTransaction().setReorderingAllowed(true)
-                        .replace(R.id.fragmentContainer, TeamFragment.class,null).commit();
+                        .replace(R.id.fragmentContainer, NewsFragment.class,null).commit();
 
                 eventsTxt.setVisibility(View.GONE);
                 updateText.setVisibility(View.GONE);
@@ -161,8 +154,9 @@ public class MainActivity extends AppCompatActivity {
 
                 eventsImage.setImageResource(R.drawable.team_icon);
                 updateImage.setImageResource(R.drawable.dashboard_icon);
-                settingImage.setImageResource(R.drawable.baseline_settings_24);
+                settingImage.setImageResource(R.drawable.baseline_account_box);
 
+                setting.setBackgroundColor(getResources().getColor(android.R.color.transparent));
                 events.setBackgroundColor(getResources().getColor(android.R.color.transparent));
                 update.setBackgroundColor(getResources().getColor(android.R.color.transparent));
 
@@ -183,51 +177,42 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        firebaseAuth = FirebaseAuth.getInstance();
-        FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-
-
-
-//        final String userDisplayName = firebaseUser.getDisplayName();
-
-
         checkUser();
 
-        setting.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(
-                        MainActivity.this,R.style.BottomSheetDialogTheme);
-                View bottomSheetView = LayoutInflater.from(getApplicationContext()).inflate(
-                        R.layout.bottomsheet,(LinearLayout)findViewById(R.id.bottomsheetLayout)
-                );
-                bottomSheetView.findViewById(R.id.logoutLayout).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Toast.makeText(MainActivity.this, "Logout Successful!", Toast.LENGTH_SHORT).show();
-                        bottomSheetDialog.dismiss();
-                        firebaseAuth.signOut();
-                        checkUser();
 
-                    }
-                });
+        setting.setOnClickListener(view -> {
 
-                bottomSheetView.findViewById(R.id.aboutUsLayout).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Toast.makeText(MainActivity.this, "About Us!", Toast.LENGTH_SHORT).show();
-                        bottomSheetDialog.dismiss();
-                    }
-                });
+            if(selectedTab != 4){
 
+                getSupportFragmentManager().beginTransaction().setReorderingAllowed(true)
+                        .replace(R.id.fragmentContainer, ProfileFragment.class,null).commit();
 
+                updateText.setVisibility(View.GONE);
+                eventsTxt.setVisibility(View.GONE);
+                liveTxt.setVisibility(View.GONE);
 
+                eventsImage.setImageResource(R.drawable.team_icon);
+                updateImage.setImageResource(R.drawable.dashboard_icon);
+                liveImage.setImageResource(R.drawable.live_icon);
 
-                bottomSheetDialog.setContentView(bottomSheetView);
-                bottomSheetDialog.show();
+                events.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+                update.setBackgroundColor(getResources().getColor(android.R.color.transparent));
+                live.setBackgroundColor(getResources().getColor(android.R.color.transparent));
 
+                setting.setBackgroundResource(round_back_navoptions);
+                settingTxt.setVisibility(View.VISIBLE);
+                settingImage.setImageResource(R.drawable.selected_profile);
 
+                mainlayout.setBackgroundColor(getResources().getColor(R.color.black));
+
+                ScaleAnimation scaleAnimation = new ScaleAnimation(0.8f,1.0f,1f,1f, RELATIVE_TO_SELF,0.0f);
+                scaleAnimation.setDuration(200);
+                scaleAnimation.setFillAfter(true);
+                setting.startAnimation(scaleAnimation);
+
+                selectedTab = 4;
             }
+
         });
 
     }
@@ -243,8 +228,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-//    TextView displayName = findViewById(R.id.username);
-//                        displayName.setText(userDisplayName);
 
     private void checkUser() {
         FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();

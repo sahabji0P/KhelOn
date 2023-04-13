@@ -6,21 +6,21 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-public class BadmintonActivity extends AppCompatActivity {
+public class FootballActivity extends AppCompatActivity {
 
-    ImageView badmintonBackbtn;
+    ImageView fBackBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_badminton);
+        setContentView(R.layout.activity_football_);
 
-        badmintonBackbtn = findViewById(R.id.badmintonBackbtn);
+        fBackBtn = findViewById(R.id.footballBackbtn);
 
-        badmintonBackbtn.setOnClickListener(new View.OnClickListener() {
+        fBackBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                BadmintonActivity.super.onBackPressed();
+                FootballActivity.super.onBackPressed();
                 finish();
             }
         });
