@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:fillViewport="true"
     android:background="@drawable/khelon_background_image"
-    tools:context=".DashboardFragment"    >
+    tools:context=".mainFragments.DashboardFragment"    >
 
 
     <LinearLayout

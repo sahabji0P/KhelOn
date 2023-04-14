@@ -21,6 +21,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.example.khelon.mainFragments.DashboardFragment;
+import com.example.khelon.mainFragments.NewsFragment;
+import com.example.khelon.mainFragments.ProfileFragment;
+import com.example.khelon.mainFragments.RegistrationFragment;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 

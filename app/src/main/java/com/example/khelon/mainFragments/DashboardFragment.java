@@ -1,4 +1,4 @@
-package com.example.khelon;
+package com.example.khelon.mainFragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.khelon.BadmintonActivity;
+import com.example.khelon.BasketballActivity;
+import com.example.khelon.CricketActivity;
+import com.example.khelon.FootballActivity;
+import com.example.khelon.R;
+import com.example.khelon.TableTennisActivity;
+import com.example.khelon.VolleyBallActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -36,22 +43,22 @@ public class DashboardFragment extends Fragment {
 
 
         cricketBtn.setOnClickListener(v1 ->
-                startActivity(new Intent(getActivity(),CricketActivity.class)));
+                startActivity(new Intent(getActivity(), CricketActivity.class)));
 
         footballBtn.setOnClickListener(v12 ->
                 startActivity(new Intent(getActivity(), FootballActivity.class)));
 
         badmintonBtn.setOnClickListener(v13 ->
-                startActivity(new Intent(getActivity(),BadmintonActivity.class)));
+                startActivity(new Intent(getActivity(), BadmintonActivity.class)));
 
         basketBtn.setOnClickListener(v14 ->
-                startActivity(new Intent(getActivity(),BasketballActivity.class)));
+                startActivity(new Intent(getActivity(), BasketballActivity.class)));
 
         tableBtn.setOnClickListener(v15 ->
-                startActivity(new Intent(getActivity(),TableTennisActivity.class)));
+                startActivity(new Intent(getActivity(), TableTennisActivity.class)));
 
         volleyBtn.setOnClickListener(v16 ->
-                startActivity(new Intent(getActivity(),VolleyBallActivity.class)));
+                startActivity(new Intent(getActivity(), VolleyBallActivity.class)));
 
 
 

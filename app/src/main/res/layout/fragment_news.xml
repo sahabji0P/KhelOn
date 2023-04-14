@@ -5,38 +5,74 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/khelon_background_image"
-    tools:context=".NewsFragment">
+    tools:context=".mainFragments.NewsFragment">
 
 
-    <RelativeLayout
-        android:id="@+id/newsHeader"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/application_header_bg"
-        android:paddingBottom="10dp"
-        android:elevation="100dp"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="20dp"
-            android:text="News"
-            android:textSize="25dp"
-            android:textStyle="bold"
-            android:textColor="@color/white"/>
+        android:orientation="vertical">
 
-        <ImageButton
-            android:id="@+id/optionsNews"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:background="@color/transparent"
-            android:src="@drawable/setting_icon"
-            android:layout_marginEnd="20dp"
-            android:layout_centerVertical="true"
-            android:contentDescription="Setting button"
-            android:layout_alignParentRight="true"/>
-    </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/newsHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/application_header_bg"
+            android:paddingBottom="10dp"
+            android:elevation="100dp"
+            tools:ignore="UselessParent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="20dp"
+                android:text="News"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                tools:ignore="HardcodedText" />
+
+            <ImageButton
+                android:id="@+id/optionsNews"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="20dp"
+                android:background="@color/transparent"
+                android:contentDescription="Setting button"
+                android:src="@drawable/setting_icon"
+                tools:ignore="HardcodedText,RedundantDescriptionCheck,TouchTargetSizeCheck" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/newsTabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="@drawable/khelon_background_image"
+                app:tabTextColor="@color/white"
+                app:tabSelectedTextColor="@color/red"
+                app:tabIndicatorColor="@color/red"
+                app:tabRippleColor="@color/app_header"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/newsViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/newsTabLayout"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+        </RelativeLayout>
+
+
+
+    </LinearLayout>
 
 
 </RelativeLayout>

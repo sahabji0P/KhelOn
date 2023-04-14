@@ -1,4 +1,4 @@
-package com.example.khelon;
+package com.example.khelon.mainFragments;
 
 import static com.example.khelon.R.id.optionsProfile;
 
@@ -16,6 +16,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.khelon.LoginActivity;
+import com.example.khelon.R;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -92,7 +94,7 @@ public class ProfileFragment extends Fragment {
         FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
 
         if(firebaseUser == null){
-            Intent intent = new Intent(getActivity(),LoginActivity.class);
+            Intent intent = new Intent(getActivity(), LoginActivity.class);
             startActivity(intent);
             getActivity().finish();
         }
