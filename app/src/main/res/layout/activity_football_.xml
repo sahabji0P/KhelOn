@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/cricketLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
-    tools:context=".FootballActivity">
+    android:background="@drawable/khelon_background_image"
+    tools:context=".football.FootballActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/application_header_bg"
         android:elevation="100dp"
-        android:id="@+id/cricketHeader"
+        android:id="@+id/footballHeader"
         android:orientation="horizontal">
 
         <ImageView
@@ -34,121 +35,31 @@
     </LinearLayout>
 
 
-    <LinearLayout
-        android:id="@+id/cricketNavigation"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:elevation="10dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:paddingStart="5dp"
-        android:paddingTop="5dp"
-        android:paddingEnd="5dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="5dp"
-        android:paddingBottom="5dp"
-        android:background="@drawable/sports_nav_layout"
-        android:weightSum="4">
+        android:layout_height="match_parent"
+        android:layout_below="@+id/footballHeader">
 
-        <LinearLayout
-            android:id="@+id/cricketHomeLayout"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_weight="1"
-            android:background="@drawable/round_back_navoptions"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:paddingStart="5dp"
-            android:paddingEnd="5dp">
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/footballTabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:background="@drawable/khelon_background_image"
+            app:tabTextColor="@color/white"
+            app:tabSelectedTextColor="@color/red"
+            app:tabIndicatorColor="@color/red"
+            app:tabRippleColor="@color/app_header"
+            tools:ignore="SpeakableTextPresentCheck" />
 
-            <ImageView
-                android:id="@+id/cricketHomeImg"
-                android:layout_width="20dp"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:src="@drawable/dashboard_selected_icon" />
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/footballViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/footballTabLayout"
+            tools:ignore="SpeakableTextPresentCheck" />
 
-            <TextView
-                android:id="@+id/cricketHomeText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textSize="15sp"
-                android:text="Home"
-                android:textColor="@color/white"
-                android:textStyle="bold" />
+    </RelativeLayout>
 
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/cricketMatchesLayout"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:paddingStart="5dp"
-            android:paddingEnd="5dp">
-
-            <ImageView
-                android:id="@+id/cricketMatchesImg"
-                android:layout_width="20dp"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:src="@drawable/live_selected_icon" />
-
-            <TextView
-                android:id="@+id/cricketMatchText"
-                android:visibility="gone"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textSize="15sp"
-                android:text="Matches"
-                android:textColor="@color/white"
-                android:textStyle="bold" />
-
-
-        </LinearLayout>
-
-
-
-        <LinearLayout
-            android:id="@+id/cricketSupportLayout"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:paddingStart="5dp"
-            android:paddingEnd="5dp">
-
-            <ImageView
-                android:id="@+id/cricketSupportImg"
-                android:layout_width="20dp"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:src="@drawable/setting_icon" />
-
-            <TextView
-                android:id="@+id/cricketSupportText"
-                android:visibility="gone"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Support"
-                android:textColor="@color/white"
-                android:gravity="center"
-                android:textSize="15sp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
-
-
-    </LinearLayout>
 
 
 </RelativeLayout>

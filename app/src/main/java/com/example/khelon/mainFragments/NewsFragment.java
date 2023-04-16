@@ -11,7 +11,7 @@ import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
 
-import com.example.khelon.NewsViewAddapterClass;
+import com.example.khelon.newsFragment.NewsViewAddapterClass;
 import com.example.khelon.R;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.tabs.TabLayout;

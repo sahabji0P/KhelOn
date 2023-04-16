@@ -1,4 +1,4 @@
-package com.example.khelon;
+package com.example.khelon.newsFragment;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

@@ -9,13 +9,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.khelon.BadmintonActivity;
-import com.example.khelon.BasketballActivity;
-import com.example.khelon.CricketActivity;
-import com.example.khelon.FootballActivity;
+import com.example.khelon.badminton.BadmintonActivity;
+import com.example.khelon.basketball.BasketballActivity;
+import com.example.khelon.cricket.CricketActivity;
+import com.example.khelon.football.FootballActivity;
 import com.example.khelon.R;
-import com.example.khelon.TableTennisActivity;
-import com.example.khelon.VolleyBallActivity;
+import com.example.khelon.tabletennis.TableTennisActivity;
+import com.example.khelon.volleyball.VolleyBallActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 

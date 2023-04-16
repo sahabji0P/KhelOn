@@ -12,22 +12,22 @@
         android:theme="@style/Theme.KhelOn"
         tools:targetApi="31">
         <activity
-            android:name=".VolleyBallActivity"
+            android:name=".volleyball.VolleyBallActivity"
             android:exported="false" />
         <activity
-            android:name=".TableTennisActivity"
+            android:name=".tabletennis.TableTennisActivity"
             android:exported="false" />
         <activity
-            android:name=".BadmintonActivity"
+            android:name=".badminton.BadmintonActivity"
             android:exported="false" />
         <activity
-            android:name=".BasketballActivity"
+            android:name=".basketball.BasketballActivity"
             android:exported="false" />
         <activity
-            android:name=".FootballActivity"
+            android:name=".football.FootballActivity"
             android:exported="false" />
         <activity
-            android:name=".CricketActivity"
+            android:name=".cricket.CricketActivity"
             android:exported="false" />
         <activity
             android:name=".SplashScreenActivity"
