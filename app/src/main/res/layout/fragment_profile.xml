@@ -33,7 +33,7 @@
             android:src="@drawable/setting_icon"
             android:layout_marginEnd="20dp"
             android:layout_centerVertical="true"
-            android:contentDescription="Setting button"
+            android:contentDescription="@string/SettingButton"
             android:layout_alignParentRight="true"/>
     </RelativeLayout>
 

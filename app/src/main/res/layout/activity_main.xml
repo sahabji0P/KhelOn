@@ -51,7 +51,8 @@
                 android:layout_width="20dp"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:src="@drawable/dashboard_icon" />
+                android:src="@drawable/dashboard_icon"
+                android:contentDescription="TODO" />
 
             <TextView
                 android:visibility="gone"
@@ -83,7 +84,8 @@
                 android:layout_width="20dp"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:src="@drawable/team_icon" />
+                android:src="@drawable/team_icon"
+                android:contentDescription="TODO" />
 
             <TextView
                 android:id="@+id/eventsLayoutTxt"
@@ -115,7 +117,8 @@
                 android:layout_width="20dp"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:src="@drawable/live_icon" />
+                android:src="@drawable/live_icon"
+                android:contentDescription="TODO" />
 
             <TextView
                 android:id="@+id/liveLayoutTxt"
@@ -148,7 +151,8 @@
             android:layout_width="20dp"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
-            android:src="@drawable/selected_profile" />
+            android:src="@drawable/selected_profile"
+            android:contentDescription="TODO" />
 
         <TextView
             android:id="@+id/settingTxt"

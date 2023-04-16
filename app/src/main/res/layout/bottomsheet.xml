@@ -12,7 +12,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:scaleType="centerCrop"
-        android:src="@drawable/round_remove" />
+        android:src="@drawable/round_remove"
+        android:contentDescription="TODO" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,7 +27,8 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:src="@drawable/selected_profile"
-            android:id="@+id/profilePicture"/>
+            android:id="@+id/profilePicture"
+            android:contentDescription="TODO" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -65,7 +67,7 @@
             android:layout_height="30dp"
             android:src="@drawable/info_icon"
             android:id="@+id/aboutIcon"
-            />
+            android:contentDescription="TODO" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -96,7 +98,7 @@
             android:layout_height="30dp"
             android:src="@drawable/baseline_logout_24"
             android:id="@+id/logoutIcon"
-            />
+            android:contentDescription="TODO" />
 
         <TextView
             android:layout_width="wrap_content"

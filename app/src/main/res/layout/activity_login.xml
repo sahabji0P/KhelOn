@@ -18,7 +18,8 @@
             android:layout_width="match_parent"
             android:layout_height="135dp"
             android:elevation="30dp"
-            android:src="@drawable/logo" />
+            android:src="@drawable/logo"
+            android:contentDescription="TODO" />
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"

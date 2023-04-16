@@ -21,7 +21,8 @@
             android:layout_width="40dp"
             android:layout_height="35dp"
             android:layout_margin="15dp"
-            android:src="@drawable/go_back" />
+            android:src="@drawable/go_back"
+            android:contentDescription="TODO" />
 
         <TextView
             android:layout_width="wrap_content"
