@@ -20,6 +20,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 
 import java.util.Objects;
@@ -34,6 +36,8 @@ public class SignUpActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
     FirebaseUser mUser;
 
+    FirebaseDatabase database;
+    DatabaseReference reference;
 
 
     @Override
@@ -64,6 +68,9 @@ public class SignUpActivity extends AppCompatActivity {
         signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
+
                 String signupNameTxt = signupName.getText().toString();
                 String signupEmailTxt = signupEmail.getText().toString();
                 String signupPasswordTxt = signupPassword.getText().toString();
@@ -113,6 +120,7 @@ public class SignUpActivity extends AppCompatActivity {
                                 mUser.updateProfile(userProfileChangeRequest).addOnCompleteListener(
                                         task1 -> {
                                             if (task1.isSuccessful()){
+
                                                 startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
                                                 Toast.makeText(SignUpActivity.this, "Sign Up! Successful, Kindly login", Toast.LENGTH_SHORT).show();
                                             }else {
@@ -121,8 +129,9 @@ public class SignUpActivity extends AppCompatActivity {
                                             }
                                         }
                                 );
-//                                Toast.makeText(SignUpActivity.this, "Sign Up! Successful, Kindly login", Toast.LENGTH_SHORT).show();
-//                                startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
+
+
+//
                             }
                             else {
                                 Toast.makeText(SignUpActivity.this, "Sign Up Failed! " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();

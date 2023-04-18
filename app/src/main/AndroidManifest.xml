@@ -12,6 +12,24 @@
         android:theme="@style/Theme.KhelOn"
         tools:targetApi="31">
         <activity
+            android:name=".volleyball.UploadVolleyball"
+            android:exported="false" />
+        <activity
+            android:name=".tabletennis.UploadTabletennis"
+            android:exported="false" />
+        <activity
+            android:name=".football.UploadFootball"
+            android:exported="false" />
+        <activity
+            android:name=".basketball.UploadBasketball"
+            android:exported="false" />
+        <activity
+            android:name=".badminton.UploadBadminton"
+            android:exported="false" />
+        <activity
+            android:name=".cricket.Upload_Cricket_Support"
+            android:exported="false" />
+        <activity
             android:name=".volleyball.VolleyBallActivity"
             android:exported="false" />
         <activity

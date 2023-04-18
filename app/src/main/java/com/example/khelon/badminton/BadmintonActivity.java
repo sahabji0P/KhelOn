@@ -1,16 +1,26 @@
 package com.example.khelon.badminton;
 
+import static com.example.khelon.CheckAdmin.checkAdmin;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
 import com.example.khelon.R;
+import com.example.khelon.cricket.CricketActivity;
+import com.example.khelon.cricket.Upload_Cricket_Support;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class BadmintonActivity extends AppCompatActivity {
+
+    FirebaseUser firebaseuser;
+    ImageView postButton;
 
     ImageView badmintonBackbtn;
     TabLayout tabLayout;
@@ -69,5 +79,24 @@ public class BadmintonActivity extends AppCompatActivity {
                 tabLayout.getTabAt(position).select();
             }
         });
+
+
+        firebaseuser = FirebaseAuth.getInstance().getCurrentUser();
+        String uid = firebaseuser.getUid();
+
+        postButton = findViewById(R.id.BadmintonPostButton);
+
+        if (checkAdmin(uid)){
+            postButton.setVisibility(View.VISIBLE);
+            postButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(new Intent(BadmintonActivity.this, UploadBadminton.class));
+                }
+            });
+        }else {
+            postButton.setVisibility(View.GONE);
+        }
+
     }
 }
