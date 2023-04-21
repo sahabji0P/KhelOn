@@ -5,6 +5,7 @@ import static com.example.khelon.R.id.optionsProfile;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -21,20 +22,33 @@ import com.example.khelon.R;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class ProfileFragment extends Fragment {
 
 
     ImageButton bottomLayout;
+    DatabaseReference reference;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View profileF =  inflater.inflate(R.layout.fragment_profile, container, false);
-
         TextView userName = profileF.findViewById(R.id.profileUsername);
         TextView userEmail = profileF.findViewById(R.id.profileEmail);
+        TextView userPhone = profileF.findViewById(R.id.profilePhone);
+
+        reference = FirebaseDatabase.getInstance().getReference("users");
+
+
+
+
+
 
         FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
         FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
@@ -52,6 +66,11 @@ public class ProfileFragment extends Fragment {
 
         return profileF;
     }
+
+
+
+
+
 
     private void showDialog(){
 
