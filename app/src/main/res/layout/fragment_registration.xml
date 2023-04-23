@@ -37,11 +37,12 @@
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:background="@color/transparent"
-                android:src="@drawable/setting_icon"
+                android:src="@drawable/add_icon"
                 android:layout_marginEnd="20dp"
                 android:layout_centerVertical="true"
                 android:contentDescription="Setting button"
                 android:layout_alignParentRight="true"/>
+
         </RelativeLayout>
 
         <androidx.cardview.widget.CardView

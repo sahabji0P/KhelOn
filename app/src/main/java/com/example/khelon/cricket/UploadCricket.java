@@ -1,4 +1,4 @@
-package com.example.khelon.football;
+package com.example.khelon.cricket;
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
@@ -11,7 +11,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -21,7 +20,6 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.khelon.cricket.DataClass;
 import com.example.khelon.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -34,7 +32,7 @@ import com.google.firebase.storage.UploadTask;
 
 import java.util.Objects;
 
-public class UploadFootball extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class UploadCricket extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     ImageView backBtn;
     ImageView uploadImage;
@@ -47,22 +45,22 @@ public class UploadFootball extends AppCompatActivity implements AdapterView.OnI
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.upload_cricket_support);
 
-        setContentView(R.layout.upload_football);
-
-        backBtn = findViewById(R.id.FootballUploadBackBtn);
+        backBtn = findViewById(R.id.uploadBackBtn);
 
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                UploadFootball.super.onBackPressed();
+                UploadCricket.super.onBackPressed();
                 finish();
             }
         });
-        uploadImage = findViewById(R.id.FootballImgUploadBtn);
-        heading = findViewById(R.id.FootballPostHeading);
-        content = findViewById(R.id.FootballPostContent);
-        saveButton = findViewById(R.id.FootballSubmitButton);
+
+        uploadImage = findViewById(R.id.imgUploadBtn);
+        heading = findViewById(R.id.postHeading);
+        content = findViewById(R.id.postContent);
+        saveButton = findViewById(R.id.uploadPostButton);
 
         ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
@@ -75,7 +73,7 @@ public class UploadFootball extends AppCompatActivity implements AdapterView.OnI
                             uploadImage.setImageURI(uri);
 
                         }else{
-                            Toast.makeText(UploadFootball.this, "No Image Selected", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(UploadCricket.this, "No Image Selected", Toast.LENGTH_SHORT).show();
                         }
                     }
                 }
@@ -93,20 +91,20 @@ public class UploadFootball extends AppCompatActivity implements AdapterView.OnI
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
+                
+                
                 saveData();
             }
         });
 
 
-        Spinner spinner = findViewById(R.id.footballSpinner);
+        Spinner spinner = findViewById(R.id.cricketSpinner);
         ArrayAdapter<CharSequence> adapter= ArrayAdapter.createFromResource(this,R.array.sports, android.R.layout.simple_spinner_item);
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
-        spinner.setOnItemSelectedListener((AdapterView.OnItemSelectedListener) this);
+        spinner.setOnItemSelectedListener(this);
     }
 
     @Override
@@ -122,7 +120,7 @@ public class UploadFootball extends AppCompatActivity implements AdapterView.OnI
 
     public void saveData(){
 
-        StorageReference storageReference = FirebaseStorage.getInstance().getReference().child("Football Posts")
+        StorageReference storageReference = FirebaseStorage.getInstance().getReference().child("Cricket Posts")
                 .child(uri.getLastPathSegment());
 
         storageReference.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
@@ -137,7 +135,7 @@ public class UploadFootball extends AppCompatActivity implements AdapterView.OnI
 
             }
         });
-
+        
     }
 
     public void uploadData(){
@@ -149,25 +147,26 @@ public class UploadFootball extends AppCompatActivity implements AdapterView.OnI
         DataClass dataClass = new DataClass(title,desc,imageURL);
 
 
-        FirebaseDatabase.getInstance().getReference("Football Posts").child(text).child(title)
+        FirebaseDatabase.getInstance().getReference("Cricket Posts").child(text).child(title)
                 .setValue(dataClass).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        if(task.isSuccessful()){
+                      if(task.isSuccessful()){
 
 //                          startActivity(new Intent(Upload_Cricket_Support.this,CricketActivity.class));
-                            Toast.makeText(UploadFootball.this, "Post uploaded", Toast.LENGTH_SHORT).show();
-                            finish();
-                        }
+                          Toast.makeText(UploadCricket.this, "Post uploaded", Toast.LENGTH_SHORT).show();
+                          finish();
+                      }
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(UploadFootball.this, Objects.requireNonNull(e.getMessage()).toString(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(UploadCricket.this, Objects.requireNonNull(e.getMessage()).toString(), Toast.LENGTH_SHORT).show();
                     }
                 });
 
 
     }
+
 
 }

@@ -11,8 +11,6 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.example.khelon.R;
-import com.example.khelon.cricket.CricketActivity;
-import com.example.khelon.cricket.Upload_Cricket_Support;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;

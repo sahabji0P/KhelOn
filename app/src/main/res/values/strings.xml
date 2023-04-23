@@ -9,4 +9,17 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="ContentDescriptions">TODO</string>
     <string name="SettingButton">Setting button</string>
+
+    <string-array name="sports">
+        <item>Live</item>
+        <item>Recent</item>
+        <item>Support</item>
+    </string-array>
+
+    <string-array name="newsLayout">
+        <item>BU</item>
+        <item>GLOBAL</item>
+    </string-array>
+
+
 </resources>

@@ -11,7 +11,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.example.khelon.CheckAdmin;
 import com.example.khelon.R;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
@@ -87,16 +86,13 @@ public class CricketActivity extends AppCompatActivity {
             postButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    startActivity(new Intent(CricketActivity.this,Upload_Cricket_Support.class));
+                    startActivity(new Intent(CricketActivity.this, UploadCricket.class));
+//                    finish();
                 }
             });
         }else {
             postButton.setVisibility(View.GONE);
         }
-
-
-
-
 
     }
 }

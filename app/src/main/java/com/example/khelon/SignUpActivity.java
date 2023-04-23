@@ -109,7 +109,6 @@ public class SignUpActivity extends AppCompatActivity {
                                 mUser.updateProfile(userProfileChangeRequest).addOnCompleteListener(
                                         task1 -> {
                                             if (task1.isSuccessful()){
-
                                                 startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
                                                 Toast.makeText(SignUpActivity.this, "Sign Up! Successful, Kindly login", Toast.LENGTH_SHORT).show();
                                             }else {
@@ -121,7 +120,7 @@ public class SignUpActivity extends AppCompatActivity {
 
                                 HelperClass user = new HelperClass(signupNameTxt,signupEmailTxt,signupPhoneNo);
                                 reference.child(Objects.requireNonNull(mUser.getUid())).setValue(user);
-    //
+
                             }
                             else {
                                 Toast.makeText(SignUpActivity.this, "Sign Up Failed! " + Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();

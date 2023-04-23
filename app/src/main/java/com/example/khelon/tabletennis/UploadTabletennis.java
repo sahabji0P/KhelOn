@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.ImageView;
 
 import com.example.khelon.R;
-import com.example.khelon.cricket.Upload_Cricket_Support;
 
 public class UploadTabletennis extends AppCompatActivity {
 

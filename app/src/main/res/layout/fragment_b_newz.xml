@@ -5,12 +5,12 @@
     android:layout_height="match_parent"
     tools:context=".newsFragment.bNewzFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="40sp"
-        android:layout_centerInParent="true"
-        android:textColor="@color/white"
-        android:text="BU Sports newz" />
+        android:id="@+id/cricketLiveRecycler"
+        android:scrollbars="vertical"
+        android:layout_marginTop="20dp"
+        />
 
 </RelativeLayout>

@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import android.view.animation.ScaleAnimation;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -25,6 +26,7 @@ import com.example.khelon.mainFragments.DashboardFragment;
 import com.example.khelon.mainFragments.NewsFragment;
 import com.example.khelon.mainFragments.ProfileFragment;
 import com.example.khelon.mainFragments.RegistrationFragment;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -32,6 +34,8 @@ import com.google.firebase.auth.FirebaseUser;
 public class MainActivity extends AppCompatActivity {
 
     private FirebaseAuth firebaseAuth;
+
+
     private int selectedTab = 4;
 
     public long pressedTime;
@@ -62,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
         final TextView settingTxt = findViewById(R.id.settingTxt);
 
         final RelativeLayout mainlayout = findViewById(R.id.mainLayout);
+
 
 
 
@@ -98,6 +103,8 @@ public class MainActivity extends AppCompatActivity {
 
 
                 mainlayout.setBackgroundColor(getResources().getColor(R.color.black));
+
+
 
                 ScaleAnimation scaleAnimation = new ScaleAnimation(0.8f,1.0f,1f,1f, RELATIVE_TO_SELF,0.0f);
                 scaleAnimation.setDuration(200);

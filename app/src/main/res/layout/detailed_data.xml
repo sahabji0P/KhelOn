@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/khelon_background_image"
+    tools:context=".DetailedData">
+
+    <TextView
+        android:id="@+id/contentHeadingView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Live Matches"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        />
+
+    <ImageView
+        android:id="@+id/contentImageView"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_gravity="center"
+        android:padding="8dp"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/add_image" />
+
+    <TextView
+        android:id="@+id/contentDescView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Description"
+        android:layout_margin="20dp"
+        android:layout_marginTop="20dp"
+        android:textSize="22sp"
+        android:textColor="@color/white"
+        />
+
+</LinearLayout>

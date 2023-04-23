@@ -5,15 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/khelon_background_image"
-    tools:context=".cricket.UploadCricket">
+    tools:context=".newsFragment.NewsUploadData">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-
-
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -26,7 +23,7 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/uploadBackBtn"
+                android:id="@+id/newsUploadBackBtn"
                 android:layout_width="40dp"
                 android:layout_height="35dp"
                 android:layout_margin="15dp"
@@ -37,7 +34,7 @@
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Upload Data To Cricket"
+                android:text="Update News!"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold"
@@ -66,7 +63,7 @@
                 tools:ignore="RtlHardcoded" />
 
             <Spinner
-                android:id="@+id/cricketSpinner"
+                android:id="@+id/newsSpinner"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:minHeight="50dp"
@@ -96,7 +93,7 @@
                 />
 
             <EditText
-                android:id="@+id/postHeading"
+                android:id="@+id/newsPostHeading"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
@@ -127,7 +124,7 @@
                 />
 
             <EditText
-                android:id="@+id/postContent"
+                android:id="@+id/newsPostContent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
@@ -158,7 +155,7 @@
                 tools:ignore="HardcodedText,RtlHardcoded" />
 
             <ImageView
-                android:id="@+id/imgUploadBtn"
+                android:id="@+id/newsImgUploadBtn"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:src="@drawable/add_image"/>
@@ -168,7 +165,7 @@
 
 
         <Button
-            android:id="@+id/uploadPostButton"
+            android:id="@+id/newsUploadPostButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

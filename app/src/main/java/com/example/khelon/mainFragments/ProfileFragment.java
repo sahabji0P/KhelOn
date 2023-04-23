@@ -26,6 +26,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 public class ProfileFragment extends Fragment {
@@ -39,30 +40,52 @@ public class ProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View profileF =  inflater.inflate(R.layout.fragment_profile, container, false);
+
+
         TextView userName = profileF.findViewById(R.id.profileUsername);
         TextView userEmail = profileF.findViewById(R.id.profileEmail);
         TextView userPhone = profileF.findViewById(R.id.profilePhone);
 
-        reference = FirebaseDatabase.getInstance().getReference("users");
-
-
-
-
-
-
         FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
         FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
+        assert firebaseUser != null;
         final String nameUser = firebaseUser.getDisplayName();
         userName.setText(nameUser);
 
         final String  emailUser = firebaseUser.getEmail();
         userEmail.setText(emailUser);
 
+        final String userUID = firebaseUser.getUid();
+        reference = FirebaseDatabase.getInstance().getReference().child("users");
+        
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String phoneDB = snapshot.child(userUID).child("phoneNo").getValue(String.class);
+                userPhone.setText(phoneDB);
+
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+
+
+
+
+
+
+
         bottomLayout = profileF.findViewById(optionsProfile);
 
         bottomLayout.setOnClickListener(view ->
                 showDialog());
+
+
 
         return profileF;
     }

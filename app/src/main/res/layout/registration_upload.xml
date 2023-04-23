@@ -5,28 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/khelon_background_image"
-    tools:context=".cricket.UploadCricket">
+    tools:context=".registration.RegistrationUpload">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-
-
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/application_header_bg"
-            android:id="@+id/cricketHeader"
+            android:id="@+id/registrationPostHeader"
             app:layout_constraintTop_toTopOf="parent"
             android:elevation="100dp"
             android:layout_marginBottom="25dp"
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/uploadBackBtn"
+                android:id="@+id/registrationUploadBackBtn"
                 android:layout_width="40dp"
                 android:layout_height="35dp"
                 android:layout_margin="15dp"
@@ -37,7 +34,7 @@
 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Upload Data To Cricket"
+                android:text="Update Registration!"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold"
@@ -46,36 +43,6 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginBottom="10dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Where to Post"
-                android:textColor="@color/white"
-                android:layout_marginTop="30dp"
-                android:layout_gravity="left"
-                android:layout_marginBottom="10dp"
-                android:textSize="25sp"
-                android:textStyle="bold"
-                tools:ignore="RtlHardcoded" />
-
-            <Spinner
-                android:id="@+id/cricketSpinner"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:minHeight="50dp"
-                android:minWidth="50dp"
-
-                />
-
-        </LinearLayout>
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -85,7 +52,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Heading of the Post"
+                android:text="Title of the Registration"
                 android:textColor="@color/white"
                 android:layout_marginTop="30dp"
                 android:layout_gravity="left"
@@ -96,7 +63,7 @@
                 />
 
             <EditText
-                android:id="@+id/postHeading"
+                android:id="@+id/registrationPostHeading"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
@@ -127,7 +94,7 @@
                 />
 
             <EditText
-                android:id="@+id/postContent"
+                android:id="@+id/registrationPostContent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="30dp"
@@ -139,36 +106,8 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Add Image to the Post"
-                android:textColor="@color/white"
-                android:layout_marginTop="30dp"
-                android:layout_gravity="left"
-                android:layout_marginStart="30dp"
-                android:layout_marginBottom="10dp"
-                android:textSize="25sp"
-                android:textStyle="bold"
-                tools:ignore="HardcodedText,RtlHardcoded" />
-
-            <ImageView
-                android:id="@+id/imgUploadBtn"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:src="@drawable/add_image"/>
-
-
-        </LinearLayout>
-
-
         <Button
-            android:id="@+id/uploadPostButton"
+            android:id="@+id/registrationUploadPostButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
