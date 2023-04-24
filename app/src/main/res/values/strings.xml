@@ -10,6 +10,8 @@
     <string name="ContentDescriptions">TODO</string>
     <string name="SettingButton">Setting button</string>
 
+    <string name="about_us"><a href="https://github.com/theshashwatj?tab=repositories">About Us</a></string>
+
     <string-array name="sports">
         <item>Live</item>
         <item>Recent</item>
@@ -18,7 +20,7 @@
 
     <string-array name="newsLayout">
         <item>BU</item>
-        <item>GLOBAL</item>
+        <item>VIDEOS</item>
     </string-array>
 
 

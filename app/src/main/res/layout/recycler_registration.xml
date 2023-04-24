@@ -14,7 +14,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/green">
+        android:background="#AA0808">
 
         <TextView
             android:id="@+id/registrationCardHeading"
@@ -23,6 +23,8 @@
             android:textStyle="bold"
             android:layout_centerVertical="true"
             android:layout_marginStart="15dp"
+            android:textColor="@color/white"
+
             android:textSize="30sp"
             android:text="Heading"/>
 

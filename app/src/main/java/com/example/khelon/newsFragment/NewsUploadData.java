@@ -46,7 +46,7 @@ public class NewsUploadData extends AppCompatActivity implements AdapterView.OnI
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_upload_data);
+        setContentView(R.layout.news_upload_data);
 
 
         backBtn = findViewById(R.id.newsUploadBackBtn);

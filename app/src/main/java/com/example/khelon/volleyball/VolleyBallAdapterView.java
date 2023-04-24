@@ -19,12 +19,12 @@ public class VolleyBallAdapterView extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
         switch (position){
             case 1:
-                return new badmintonRecent();
+                return new volleyballRecent();
             case 2:
-                return new badmintonSupport();
+                return new volleyballSupport();
 
             default:
-                return new badmintonLive();
+                return new volleyballLive();
         }
     }
 

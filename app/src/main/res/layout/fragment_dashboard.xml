@@ -36,16 +36,7 @@
                 android:textStyle="bold"
                 android:textColor="@color/white"/>
 
-            <ImageButton
-                android:id="@+id/optionsDashboard"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:background="@color/transparent"
-                android:src="@drawable/setting_icon"
-                android:layout_marginEnd="20dp"
-                android:layout_centerVertical="true"
-                android:contentDescription="Setting button"
-                android:layout_alignParentRight="true"/>
+
         </RelativeLayout>
 
         <LinearLayout
@@ -241,7 +232,7 @@
                     android:layout_height="wrap_content"
                     android:text="Badminton"
                     android:textColor="@color/white"
-                    android:textSize="26sp"
+                    android:textSize="22sp"
                     android:textStyle="bold"
                     />
 
@@ -295,7 +286,7 @@
                     android:layout_height="wrap_content"
                     android:text="Volley Ball"
                     android:textColor="@color/white"
-                    android:textSize="26sp"
+                    android:textSize="22sp"
                     android:textStyle="bold"
                     />
 
@@ -350,7 +341,7 @@
                     android:layout_height="wrap_content"
                     android:text="Table Tennis"
                     android:textColor="@color/white"
-                    android:textSize="24sp"
+                    android:textSize="22sp"
                     android:textStyle="bold"
                     />
 
@@ -369,7 +360,8 @@
                     android:gravity="center"
                     android:textColor="@color/black"
                     android:textStyle="bold"
-                    android:textSize="17sp"/>
+                    android:textSize="17sp"
+                    tools:ignore="HardcodedText,RtlHardcoded" />
 
 
 

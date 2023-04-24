@@ -3,11 +3,13 @@ package com.example.khelon.mainFragments;
 import static com.example.khelon.R.id.optionsProfile;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -85,8 +87,6 @@ public class ProfileFragment extends Fragment {
         bottomLayout.setOnClickListener(view ->
                 showDialog());
 
-
-
         return profileF;
     }
 
@@ -109,6 +109,7 @@ public class ProfileFragment extends Fragment {
 
         LinearLayout aboutUs = bottomSheetDialog.findViewById(R.id.aboutUsLayout);
         TextView UserName = bottomSheetDialog.findViewById(R.id.username);
+        TextView about = bottomSheetDialog.findViewById(R.id.aboutTxt);
         LinearLayout logOut = bottomSheetDialog.findViewById(R.id.logoutLayout);
 
         UserName.setText(nameUser);
@@ -117,6 +118,9 @@ public class ProfileFragment extends Fragment {
         aboutUs.setOnClickListener(view ->{
                 bottomSheetDialog.dismiss();
                 Toast.makeText(getActivity(), "About Us!", Toast.LENGTH_SHORT).show();
+                about.setMovementMethod(LinkMovementMethod.getInstance());
+                about.setLinkTextColor(Color.WHITE);
+
         });
 
         logOut.setOnClickListener(view -> {
